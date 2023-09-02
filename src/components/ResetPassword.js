@@ -3,8 +3,12 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { GlobalStyle } from "../Styles/globalStyles";
 import axios from "axios";
+import { url } from "../App";
+import { useNavigate } from "react-router-dom";
 
 function ResetPassword() {
+  let navigate = useNavigate();
+
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -28,7 +32,7 @@ function ResetPassword() {
     }
 
     axios
-      .post("/users/reset-password", { token, password })
+      .post(`${url}/users/reset-password`, { token, password })
       .then((response) => {
         setMessage(response.data.message);
       })
@@ -36,6 +40,7 @@ function ResetPassword() {
         setMessage("Error: Unable to reset password.");
         console.error("Error resetting password:", error);
       });
+    navigate("/login");
   };
 
   return (
@@ -58,9 +63,9 @@ function ResetPassword() {
                       New Password
                     </label>
                     <input
+                      required
                       type="password"
                       name="password"
-                      placeholder="Enter your new password"
                       value={password}
                       onChange={handlePasswordChange}
                     />
@@ -70,20 +75,21 @@ function ResetPassword() {
                       Confirm New Password
                     </label>
                     <input
+                      required
                       type="password"
                       name="password"
-                      placeholder="Enter your new password"
                       value={confirmPassword}
                       onChange={handleConfirmPasswordChange}
                     />
                   </div>
                   <div className="modal-buttons">
                     <button className="input-button" type="submit">
-                      Reset Password
+                      SUBMIT
                     </button>
                   </div>
                 </form>
-                {message && <p>{message}</p>}
+                <br />
+                {message && <p className="message">{message}</p>}
               </div>
             </div>
           </div>
@@ -115,6 +121,18 @@ const Wrapper = styled.section`
     justify-content: center;
     transition: 0.4s;
   }
+
+  .message {
+    color: #55311c;
+    font-size: 1.2rem;
+    border: 1px solid green;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: lightgreen;
+    width: 200px;
+    justify-content: center;
+  }
+
   .modal-container {
     display: flex;
     max-width: 40vw;

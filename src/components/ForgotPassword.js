@@ -35,7 +35,7 @@ function ForgotPassword() {
                 <h1 className="modal-title">
                   {" "}
                   <h1 style={{ textAlign: "center" }}>Level Up</h1>
-                  <br></br>Password Reset
+                  <br></br>Forgot Password
                 </h1>
                 <br />
                 <form onSubmit={handleSubmit}>
@@ -54,9 +54,14 @@ function ForgotPassword() {
                       Send Reset Link
                     </button>
                   </div>
+                  <br />
+                  {message && (
+                    <p className="message">
+                      <center> {message}</center>
+                    </p>
+                  )}
                 </form>
                 <br />
-                {message && <p className="message">{message}</p>}
               </div>
             </div>
           </div>
@@ -107,6 +112,7 @@ const Wrapper = styled.section`
     padding: 5px;
     background-color: lightgreen;
     width: 200px;
+    justify-content: center;
   }
   .modal-title {
     margin: 0;

@@ -48,12 +48,11 @@ function Register() {
       //to store in session storage
       sessionStorage.setItem("token", res.data.token);
       //after login and storing navigate to dashboard
-      // navigate("/home");
+      navigate("/class");
+
       console.log(res);
     } catch (error) {
       console.log(error);
-      // toast.error(error.response.data.message)
-      toast.error(error.response.data.message);
     }
   };
   return (
@@ -241,6 +240,7 @@ const Wrapper = styled.section`
     margin: 60px 0 0;
     font-size: 14px;
     text-align: center;
+    color: black;
   }
   .sign-up a {
     color: #8c7569;
