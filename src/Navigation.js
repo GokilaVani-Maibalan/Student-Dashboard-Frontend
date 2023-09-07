@@ -33,7 +33,7 @@ export const Navigation = () => {
           <Route path="/leave" element={<Leave />} />
           <Route path="/certificate" element={<Certificate />} />
           <Route path="/syllabus" element={<Syllabus />} />
-          {/*<Route path="/stu-dashboard" element={<Dashboard />} />*/}
+          <Route path="/stu-dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -38,14 +38,14 @@ function Sidebar() {
                 <SiGoogleclassroom style={{ marginRight: "10px" }} />
                 Class
               </p>
-              {/*} <p
+              <p
                 className="dash-items"
                 onClick={() => navigate("/stu-dashboard")}
               >
                 <RiDashboardFill style={{ marginRight: "10px" }} />
                 Dashboard
               </p>
-          */}
+
               <p className="dash-items" onClick={() => navigate("/task")}>
                 <FaTasks style={{ marginRight: "10px" }} />
                 Tasks

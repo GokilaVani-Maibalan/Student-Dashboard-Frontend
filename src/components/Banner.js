@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import learning from "../assets/learning.jpg";
 import Button from "react-bootstrap/Button";
+import favicon from "../assets/icons8-learning-50.png";
 
 export const Banner = () => {
   let navigate = useNavigate();
@@ -11,10 +12,16 @@ export const Banner = () => {
         <img src={learning} alt="banner" style={{ maxHeight: "450px" }} />
       </div>
       <div className="banner-description">
-        <h1 className="banner-name" style={{ color: "white" }}>
+        <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
           {" "}
-          Level Up
-        </h1>
+          <img src={favicon} />
+          <br></br>
+          <h1 className="banner-name" style={{ color: "white" }}>
+            {" "}
+            Level Up
+          </h1>
+        </div>
+
         <br />
         <h4 className="banner-name" style={{ color: "#8c7569" }}>
           {" "}
