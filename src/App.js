@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 
 import { Navigation } from "./Navigation";
 
-export const url = "https://deft-valkyrie-f4cfdc.netlify.app/";
+export const url = "https://student-dashboard-z9j4.onrender.com";
 // ("http://localhost:3000");
 
 function App() {
